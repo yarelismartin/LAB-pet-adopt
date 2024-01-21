@@ -4,5 +4,5 @@ div{
   flex-wrap: wrap;
   justify-content: space-around;
   text-align:left;
-  margin-bottom: 30px;
+  margin: 30px;
 }
