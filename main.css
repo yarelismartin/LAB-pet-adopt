@@ -1,8 +1,16 @@
 
-div{
+#app{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align:left;
+  margin: 30px;
+}
+
+.card{
+  margin-bottom: 30px;
+}
+
+.form-div{
   margin: 30px;
 }
