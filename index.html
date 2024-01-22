@@ -4,18 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body >
+  <div class="form-div">
+    <form id="form">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Name"
+          required
+        />
+        <label for="floatingInput">Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="color"
+          placeholder="Color"
+          required
+        />
+        <label for="floatingInput">Color</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="specialSkills"
+          placeholder="Special Skills"
+          required
+        />
+        <label for="floatingInput">Special Skill</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="typeOf"
+          placeholder="Type of Pet"
+          required
+        />
+        <label for="floatingInput">Type</label>
+      <div class="form-floating mb-3">
+        <input
+          type="url"
+          class="form-control"
+          id="image"
+          placeholder="Image of pet"
+          required
+          
+        />
+        <label for="floatingInput">Image</label>
+      </div>
+      <div>
+      <button type="submit" class="btn btn-success" id="form-submit">
+        Add Pet
+      </button>
+      </div>
+    </form>
+  </div>
+
   <div id="btn-group">
     <button type="click" id="cat"> Cat</button>
     <button type="click" id="dog">Dog</button>
     <button type="click" id="dino">Dino</button>
     <button type="click" id="show-btn">Clear Filter</button>
   </div>  
+  
   <div id="app"></div>
-  <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
 </body>
 </html>

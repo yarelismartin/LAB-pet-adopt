@@ -306,3 +306,23 @@ showDinoButton.addEventListener("click", () => {
 showAllButton.addEventListener("click", () => {
   cardsOnDom(pets);
 });
+
+
+const form = document. querySelector("#form");
+
+const createMember = (e) =>{
+  e.preventDefault();
+  const newMemberObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    skill: document.querySelector("#specialSkills").value,
+    type: document.querySelector("#typeOf").value,
+    image: document.querySelector("#image").value,
+  };
+  pets.push(newMemberObj);
+  cardsOnDom(pets);
+  form.reset();
+}
+
+form.addEventListener("submit", createMember);
