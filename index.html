@@ -8,6 +8,18 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body >
+
+
+  <div id="btn-group">
+    <button type="click" class="top-btn" id="cat"> Cat</button>
+    <button type="click" class="top-btn" id="dog">Dog</button>
+    <button type="click" class="top-btn" id="dino">Dino</button>
+    <button type="click" class="top-btn" id="show-btn">Clear Filter</button>
+    <a target="_blank"  href="#scrollToCreate"><button id="addYourPet" class="top-btn">Add A Pet</button></a>
+  </div>  
+  
+  <div id="app"></div>  
+  <a id="scrollToCreate"></a>
   <div class="form-div">
     <form id="form">
       <div class="form-floating mb-3">
@@ -59,7 +71,6 @@
           id="image"
           placeholder="Image of pet"
           required
-          
         />
         <label for="floatingInput">Image</label>
       </div>
@@ -70,15 +81,6 @@
       </div>
     </form>
   </div>
-
-  <div id="btn-group">
-    <button type="click" id="cat"> Cat</button>
-    <button type="click" id="dog">Dog</button>
-    <button type="click" id="dino">Dino</button>
-    <button type="click" id="show-btn">Clear Filter</button>
-  </div>  
-  
-  <div id="app"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>

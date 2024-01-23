@@ -14,3 +14,26 @@
 .form-div{
   margin: 30px;
 }
+
+html { scroll-behavior: smooth;}
+
+.btn-delete{
+  border-color: rgb(110, 33, 33);
+  border-radius: 5px;
+  background-color: rgb(110, 33, 33);
+  color: whitesmoke;
+}
+
+#btn-group{
+  text-align: center;
+  margin: 5px;
+}
+
+.top-btn{
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#addYourPet{
+  margin-left: 65%;
+}
