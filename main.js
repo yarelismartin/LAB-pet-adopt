@@ -1,3 +1,5 @@
+let filterToggle = true;
+
 const pets = [
   {
     id: 1,
@@ -253,10 +255,11 @@ const cardsOnDom = (array) => {
     domString += `<div class="card" style="width: 18rem;">
       <div class="card-body">
       <h5 class="card-title">${pet.name}</h5>
-      <img src=${pet.imageUrl} class="card-img-top" alt="card img cap">
+      <img src="${pet.imageUrl}" class="card-img-top" alt="card img cap">
         <p class="card-text">Color: ${pet.color}</p>
         <p class="card-text">Special Skill: ${pet.specialSkill}</p>
         <p class="card-text">Type: ${pet.type}</p>
+        <button type:"click" class ="btn-delete" id="delete--${pet.id}" >Delete</button>
     </div>
   </div>`;
   }
@@ -274,36 +277,38 @@ const showDogButton = document.querySelector("#dog");
 const showDinoButton = document.querySelector("#dino");
 
 // function to filter pets based on type
-const filter = (array, typeString) => {
+const filter = (typeString) => {
+  filterToggle= false;
   const typeArray = [];
 
-  for (const pet of array) {
+  for (const pet of pets) {
     if (pet.type === typeString) {
       typeArray.push(pet);
     }
   }
-  return typeArray;
+  cardsOnDom(typeArray) ;
 };
 
 //  Add click event listener to filter all the pet type on button click
 showCatButton.addEventListener("click", () => {
-  const catButton = filter(pets, "cat");
+  const catButton = filter("cat");
   cardsOnDom(catButton);
 });
 
 showDogButton.addEventListener("click", () => {
-  const dogButton = filter(pets, "dog");
+  const dogButton = filter("dog");
   cardsOnDom(dogButton);
 });
 
 showDinoButton.addEventListener("click", () => {
-  const dinoButton = filter(pets, "dino");
+  const dinoButton = filter("dino");
   cardsOnDom(dinoButton);
 });
 
 
 // Add click event listener to show all the pets on button click using the function we created above
 showAllButton.addEventListener("click", () => {
+  filterToggle = true;
   cardsOnDom(pets);
 });
 
@@ -326,3 +331,36 @@ const createMember = (e) =>{
 }
 
 form.addEventListener("submit", createMember);
+
+
+const app = document.querySelector("#app")
+
+// 1. add a btn to domstring 
+// 2. create an even listerner 
+
+app.addEventListener("click", (e) => {
+    if( e.target.id.includes ("delete")){
+      const [ , id] = e.target.id.split("--");
+    
+      const index = pets.findIndex((e) => e.id === Number(id));
+
+      const pet = pets.find((p) => p.id === Number(id))
+      pets.splice(index, 1);
+      // cardsOnDom(pets);
+
+      if(filterToggle){
+        cardsOnDom(pets)
+      } else {
+        filter(pet.type);
+      }
+    }
+});
+// 3. make sure to target the e.target.id includes delte w/ if ststament
+// 4. add logic to remove from array
+// 5. repaint dom with updated array 
+const startApp = () => {
+  cardsOnDom(pets);
+  // events(); // ALWAYS LAST
+};
+
+startApp();
