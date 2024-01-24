@@ -323,7 +323,7 @@ const createMember = (e) =>{
     color: document.querySelector("#color").value,
     skill: document.querySelector("#specialSkills").value,
     type: document.querySelector("#typeOf").value,
-    image: document.querySelector("#image").value,
+    imageUrl: document.querySelector("#image").value,
   };
   pets.push(newMemberObj);
   cardsOnDom(pets);
